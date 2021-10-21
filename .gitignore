@@ -3,6 +3,7 @@
 /node_modules
 /pgdata
 /pgadmin-data
+/src/migration
 
 # Logs
 logs

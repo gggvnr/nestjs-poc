@@ -9,7 +9,7 @@ import {
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 
-import { UserInfo } from '../../user/entity/user-info.entity';
+import { UserInfo } from '../../User/entity/user-info.entity';
 
 @Entity()
 @Unique(['username'])

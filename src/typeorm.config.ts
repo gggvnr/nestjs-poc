@@ -1,13 +1,16 @@
+import * as dotenv from 'dotenv';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+
+dotenv.config();
 
 const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
-  host: process.env.POSTGRES_HOST || 'postgres-db',
+  host: process.env.POSTGRES_HOST || 'localhost',
   port: +process.env.POSTGRES_PORT || 5432,
-  username: process.env.DB_USERNAME || 'postgres',
-  password: process.env.DB_PASSWORD || 'postgres',
-  database: process.env.POSTGRES_DB || 'tododb',
-  entities: [__dirname + '/**/*.entity.ts', __dirname + '/**/*.entity.js'],
+  username: process.env.DATABASE_USER || 'admin',
+  password: process.env.DATABASE_PASSWORD || 'pass12345',
+  database: process.env.DB_NAME || 'nestjs-crud-db',
+  entities: [__dirname + '/**/*.entity{.ts,.js}'],
   migrationsRun: false,
   logging: true,
   migrationsTableName: 'migration',
